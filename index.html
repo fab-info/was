@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W.A.S. Registry</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#101217">
+<style>
+@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Oswald;font-weight:400;src:url(fonts/oswald-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Oswald;font-weight:600;src:url(fonts/oswald-latin-600-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Oswald;font-weight:700;src:url(fonts/oswald-latin-700-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:400;src:url(fonts/inter-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:600;src:url(fonts/inter-latin-600-normal.woff2) format("woff2");font-display:swap}
+:root{--ink:#101217;--ink2:#1b1e26;--muted:#6b7080;--line:#e6e2da;--bg:#f5f2ec;--card:#fff;--gold:#c9a227;--gold2:#f3d67a;--main:#8c2f14;--ok:#1f8a4c;--bad:#a3261e}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--main);text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+/* header */
+header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:5;border-bottom:1px solid rgba(255,255,255,.06)}
+header .wrap{display:flex;align-items:center;gap:12px;height:64px}
+.seal{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,#8e6d10);display:grid;place-items:center;flex:none;box-shadow:inset 0 0 0 2px var(--ink),inset 0 0 0 3px var(--gold2)}
+.seal span{font-family:Anton;font-size:11.5px;color:var(--ink);letter-spacing:.4px}
+.brand{color:#fff;line-height:1.1;min-width:0}
+.brand b{display:block;font-family:Oswald;font-weight:700;letter-spacing:2px;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{font-family:Oswald;letter-spacing:1.5px;color:var(--gold);font-size:10.5px}
+nav{margin-left:auto;display:flex;gap:18px}
+nav a{color:#c9ccd4;font-family:Oswald;letter-spacing:1.2px;font-size:13px}
+nav a:hover{color:#fff}
+@media(max-width:560px){nav a.opt{display:none}}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 70% -10%,#2b2f3b 0,var(--ink) 60%);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding-top:48px;padding-bottom:56px}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-top:32px}}
+.kicker{font-family:Oswald;letter-spacing:3px;color:var(--gold);font-size:13px}
+.hero h1{font-family:Anton;font-weight:400;font-size:clamp(40px,7vw,72px);line-height:.98;margin:10px 0 14px;letter-spacing:.5px}
+.hero p{color:#b9bdc8;font-size:16px;line-height:1.6;max-width:520px;margin:0 0 22px}
+.search{display:flex;gap:8px;max-width:480px}
+.search input{flex:1;min-width:0;font:600 16px Inter;padding:14px 16px;border:1px solid #333845;border-radius:10px;background:#171a21;color:#fff}
+.search input::placeholder{color:#6d7282}
+.search button,.btn{font:700 14px Oswald;letter-spacing:1.6px;padding:0 20px;border:0;border-radius:10px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink);cursor:pointer;min-height:48px}
+.fan{position:relative;height:340px}
+@media(max-width:820px){.fan{height:300px}}
+.fan .c{position:absolute;top:10px;left:50%;width:200px;margin-left:-100px;transition:transform .5s}
+.fan .c:nth-child(1){transform:rotate(-9deg) translateX(-70px)}
+.fan .c:nth-child(2){transform:rotate(7deg) translateX(70px) translateY(12px)}
+.fan:hover .c:nth-child(1){transform:rotate(-13deg) translateX(-95px)}
+.fan:hover .c:nth-child(2){transform:rotate(11deg) translateX(95px) translateY(12px)}
+/* holo card */
+.holo{position:relative;border-radius:12px;aspect-ratio:63.5/88.9;transform-style:preserve-3d;transition:transform .15s;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.holo img{width:100%;height:100%;display:block;border-radius:12px}
+.holo:after{content:"";position:absolute;inset:0;border-radius:12px;pointer-events:none;mix-blend-mode:color-dodge;opacity:.0;transition:opacity .3s;
+  background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.55) var(--p,45%),transparent 70%),
+  repeating-linear-gradient(115deg,rgba(255,0,120,.18) 0 6px,rgba(0,200,255,.18) 6px 12px,rgba(255,230,0,.18) 12px 18px)}
+.holo.gold:after{background:linear-gradient(115deg,transparent 20%,rgba(255,235,170,.7) var(--p,45%),transparent 70%)}
+.holo:hover:after,.holo.act:after{opacity:.55}
+/* sections */
+section{padding:44px 0}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:18px}
+h2{font-family:Oswald;font-weight:700;letter-spacing:1.5px;font-size:22px;margin:0}
+.sh span{color:var(--muted);font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:720px){.steps{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.step b{font-family:Anton;font-size:28px;color:var(--gold);display:block;line-height:1}
+.step h3{font-family:Oswald;letter-spacing:1px;font-size:16px;margin:10px 0 6px}
+.step p{margin:0;color:#4b5060;font-size:14px;line-height:1.55}
+.setblock{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:18px}
+.setblock header{all:unset;display:block;margin-bottom:14px}
+.setblock h3{font-family:Oswald;letter-spacing:1px;font-size:18px;margin:0}
+.setblock .meta{color:var(--muted);font-size:13px;margin-top:3px}
+.setblock p{color:#4b5060;font-size:14px;line-height:1.55;margin:8px 0 0;max-width:720px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:18px}
+.tile{display:block;color:inherit}
+.tile .holo{box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.tile .cap{margin-top:9px;font-family:Oswald;letter-spacing:.8px;font-size:13px;line-height:1.3}
+.tile .cap small{display:block;color:var(--muted);font-family:Inter;letter-spacing:0;font-size:12px}
+.chip{display:inline-block;font-family:Oswald;font-size:11px;letter-spacing:1px;padding:2px 7px;border-radius:99px;background:var(--ink);color:var(--gold2);margin-left:6px;vertical-align:1px}
+/* cert page */
+.certtop{background:var(--ink);color:#fff;padding:26px 0 30px}
+.certtop h1{font-family:Oswald;font-weight:700;letter-spacing:1.5px;font-size:22px;margin:0 0 14px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:-6px}
+.status{display:flex;align-items:center;gap:10px;padding:13px 18px;background:#eaf6ef;color:var(--ok);font-family:Oswald;font-weight:700;letter-spacing:1.2px;font-size:15px}
+.status.bad{background:#fbeeee;color:var(--bad)}
+.status i{width:22px;height:22px;border-radius:50%;background:var(--ok);display:grid;place-items:center;flex:none;color:#fff;font-style:normal;font-size:13px}
+.status.bad i{background:var(--bad)}
+.cgrid{display:grid;grid-template-columns:300px 1fr;gap:28px;padding:22px}
+@media(max-width:760px){.cgrid{grid-template-columns:1fr}}
+.flip{perspective:1400px;cursor:pointer;max-width:300px;margin:0 auto;width:100%}
+.flip .in{position:relative;aspect-ratio:63.5/88.9;transition:transform .8s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flip .face.b{transform:rotateY(180deg)}
+.hint{text-align:center;color:var(--muted);font-size:12px;margin-top:10px}
+.gradebox{display:flex;align-items:center;gap:16px;padding:14px 16px;border-radius:12px;background:var(--ink);color:#fff;margin-bottom:16px}
+.gradebox .n{font-family:Anton;font-size:60px;line-height:1;background:linear-gradient(180deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.gradebox .t{font-family:Oswald;font-weight:700;letter-spacing:1.5px;font-size:18px;line-height:1.2}
+.gradebox .t small{display:block;font-weight:400;color:#9ea3b0;letter-spacing:1px;font-size:12px}
+.gradebox .pop{margin-left:auto;text-align:right;font-family:Oswald;letter-spacing:1px;font-size:12px;color:#9ea3b0}
+.gradebox .pop b{display:block;font-family:Anton;font-size:26px;color:#fff;letter-spacing:.5px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:var(--muted);width:40%;font-family:Oswald;letter-spacing:.8px;font-size:12.5px;text-transform:uppercase;padding-right:10px}
+td:last-child{font-weight:600}
+h4{font-family:Oswald;font-weight:700;letter-spacing:1.2px;font-size:14px;margin:20px 0 8px}
+.sub{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sub div{background:var(--bg);border-radius:10px;padding:9px 4px;text-align:center}
+.sub b{display:block;font-family:Anton;font-size:22px;color:var(--main)}
+.sub span{font-size:10.5px;color:var(--muted);font-family:Oswald;letter-spacing:.8px;text-transform:uppercase}
+.note{font-size:14.5px;line-height:1.6;color:#333;margin:0;border-left:3px solid var(--gold);padding-left:12px}
+.more{margin-top:20px;font-size:13px;color:var(--muted)}
+.more a{font-weight:600}
+footer{background:var(--ink);color:#8d92a0;font-size:12px;line-height:1.6;padding:26px 0;margin-top:30px}
+footer b{color:#fff;font-family:Oswald;letter-spacing:1.5px;font-weight:600}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="./" class="seal" aria-label="Home"><span id="sealT">W.A.S.</span></a>
+  <a href="./" class="brand"><b id="brandName">W.A.S.</b><small id="brandSub">REGISTRY</small></a>
+  <nav><a href="./#registry">REGISTRY</a><a class="opt" href="./#how">HOW IT WORKS</a><a href="./#verify">VERIFY</a></nav>
+</div></header>
+<div id="app"></div>
+<footer><div class="wrap"><b id="fBrand">W.A.S.</b><br><span id="fText"></span></div></footer>
+<script src="data/certs.js"></script>
+<script>
+const D=window.WAS, B=D.brand, app=document.getElementById('app');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const find=q=>{if(!q)return null;const t=q.trim().toLowerCase(),d=t.replace(/\D/g,'');
+  return D.certs.find(c=>c.id.toLowerCase()===t||c.id.replace(/\D/g,'')===d||(c.alias||[]).some(a=>a===t||a===d||a===d.slice(-2)))||null};
+const holo=(src,finish,cls='')=>`<div class="holo ${finish||''} ${cls}"><img src="${src}" alt="" loading="lazy"></div>`;
+const check='<svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function setBrand(sub){document.getElementById('sealT').textContent=B.short;document.getElementById('brandName').textContent=sub?sub.toUpperCase():B.name.toUpperCase();
+  document.getElementById('brandSub').textContent=B.est+' · REGISTRY';document.getElementById('fBrand').textContent=B.short+' · '+B.name.toUpperCase();
+  document.getElementById('fText').innerHTML='A fictional, handmade grading service for one-of-a-kind custom trading cards. All grades are final. No trades accepted.'}
+function searchForm(val=''){return `<form class="search" id="sf"><input id="q" placeholder="Cert number, e.g. 17072026-01" value="${esc(val)}" aria-label="Cert number"><button>VERIFY</button></form>`}
+function bindSearch(){const f=document.getElementById('sf');if(f)f.onsubmit=e=>{e.preventDefault();const v=document.getElementById('q').value;const c=find(v);location.search='?c='+encodeURIComponent(c?c.id:v)}}
+function tilt(){document.querySelectorAll('.holo').forEach(el=>{
+  const mv=(x,y)=>{const r=el.getBoundingClientRect(),px=(x-r.left)/r.width,py=(y-r.top)/r.height;
+    el.style.transform=`rotateY(${(px-.5)*14}deg) rotateX(${(.5-py)*14}deg)`;el.style.setProperty('--p',(px*100)+'%');el.classList.add('act')};
+  el.addEventListener('pointermove',e=>mv(e.clientX,e.clientY));
+  el.addEventListener('pointerleave',()=>{el.style.transform='';el.classList.remove('act')});})}
+function home(){
+  setBrand();document.title=B.short+' Registry';
+  const listed=D.certs.filter(c=>c.listed!==false), hero=listed.slice(0,2);
+  const sets=Object.entries(D.sets).map(([k,s])=>({k,s,cards:listed.filter(c=>c.set===k)})).filter(x=>x.cards.length);
+  app.innerHTML=`
+  <div class="hero"><div class="wrap">
+    <div><div class="kicker">${esc(B.est)} · CUSTOM CARD REGISTRY</div>
+      <h1>${esc(B.tagline)}</h1>
+      <p>Handmade trading cards for the people and moments that matter. Every card is designed, printed and slabbed by hand, then graded and registered here with its own certificate.</p>
+      <div id="verify">${searchForm()}</div></div>
+    <div class="fan">${hero.map(c=>`<a class="c" href="?c=${c.id}">${holo(c.front,c.finish)}</a>`).join('')}</div>
+  </div></div>
+  <section id="how"><div class="wrap">
+    <div class="sh"><h2>HOW IT WORKS</h2></div>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>DESIGNED</h3><p>Every card starts with a story: photos, inside jokes and a theme turned into a one-off card design with front and back.</p></div>
+      <div class="step"><b>02</b><h3>HANDCRAFTED</h3><p>Printed on premium stock or glitter foil, laminated and cut by hand, then sealed in a slab with its own label.</p></div>
+      <div class="step"><b>03</b><h3>REGISTERED</h3><p>Each slab carries a cert number and QR code. Scan it and you land right here, with grade, population and the story behind the card.</p></div>
+    </div></div></section>
+  <section id="registry" style="padding-top:0"><div class="wrap">
+    <div class="sh"><h2>REGISTRY</h2><span>${listed.length} card${listed.length===1?'':'s'} registered</span></div>
+    ${sets.map(({k,s,cards})=>`<div class="setblock"><header><h3>${esc(s.name)}</h3><div class="meta">${esc([s.occasion,s.place,s.date].filter(Boolean).join(' · '))}</div>${s.blurb?`<p>${esc(s.blurb)}</p>`:''}</header>
+      <div class="gallery">${cards.map(c=>`<a class="tile" href="?c=${c.id}">${holo(c.front,c.finish)}<div class="cap">${esc(c.no)} ${esc(c.title)}${c.pop===1?'<span class="chip">1/1</span>':''}<small>${esc(c.gradeLabel)} ${c.grade} · Cert ${esc(c.id)}</small></div></a>`).join('')}</div></div>`).join('')}
+  </div></section>`;
+  bindSearch();tilt();
+}
+function cert(q){
+  const c=find(q);
+  if(!c){setBrand();app.innerHTML=`<div class="certtop"><div class="wrap"><h1>CERT VERIFICATION</h1>${searchForm(q)}</div></div>
+    <div class="wrap"><div class="panel" style="margin-top:22px"><div class="status bad"><i>!</i>CERT NOT FOUND</div>
+    <div style="padding:18px"><p class="note">No card with this number is registered. Check the number on the label, or browse the <a href="./#registry">registry</a>.</p></div></div></div>`;bindSearch();return}
+  const s=D.sets[c.set]||{}, same=D.certs.filter(x=>x.set===c.set&&x.id!==c.id);
+  setBrand(s.issuer);document.title='Cert '+c.id+' · '+c.player;
+  app.innerHTML=`<div class="certtop"><div class="wrap"><h1>CERT VERIFICATION</h1>${searchForm(c.id)}</div></div>
+  <div class="wrap" style="margin-top:22px"><div class="panel">
+   <div class="status"><i>${check}</i>VERIFIED · CERT ${esc(c.id)}</div>
+   <div class="cgrid">
+    <div><div class="flip" id="fl"><div class="in"><div class="face">${holo(c.front,c.finish)}</div><div class="face b">${holo(c.back,'')}</div></div></div><div class="hint">Tap the card to flip it</div></div>
+    <div>
+     <div class="gradebox"><div class="n">${c.grade}</div><div class="t">${esc(c.gradeLabel)}<small>FINAL GRADE</small></div><div class="pop"><b>${c.pop}</b>POPULATION<br>${c.popHigher} GRADED HIGHER</div></div>
+     <table>
+      <tr><td>Cert number</td><td>${esc(c.id)}</td></tr>
+      <tr><td>Set</td><td>${esc(s.name||'')}</td></tr>
+      <tr><td>Card</td><td>${esc(c.no)} ${esc(c.title)}</td></tr>
+      <tr><td>Player</td><td>${esc(c.player)}</td></tr>
+      ${c.team?`<tr><td>Team</td><td>${esc(c.team)}</td></tr>`:''}
+      <tr><td>Variety</td><td>${esc(c.variety)}</td></tr>
+      ${(c.facts||[]).map(([a,b])=>`<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}
+     </table>
+     ${c.sub?`<h4>SUBGRADES</h4><div class="sub">${Object.entries(c.sub).map(([k,v])=>`<div><b>${v}</b><span>${esc(k)}</span></div>`).join('')}</div>`:''}
+     ${c.notes?`<h4>GRADER NOTES</h4><p class="note">${esc(c.notes)}</p>`:''}
+     ${same.length?`<div class="more">Also in this set: ${same.map(x=>`<a href="?c=${x.id}">${esc(x.no)} ${esc(x.title)}</a>`).join(' · ')}</div>`:''}
+    </div></div></div></div>`;
+  document.getElementById('fl').onclick=e=>e.currentTarget.classList.toggle('on');
+  bindSearch();tilt();
+}
+const P=new URLSearchParams(location.search), q=P.get('c');
+q!==null?cert(q):home();
+if(location.hash){const el=document.querySelector(location.hash);if(el)setTimeout(()=>el.scrollIntoView(),50)}
+</script>
+</body>
+</html>
