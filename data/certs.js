@@ -24,7 +24,7 @@ window.WAS = {
       name: "2026 Honeymoon Quest Set",
       issuer: "Wedding Authentication Services",
       occasion: "Wedding · Alex & Rieke",
-      date: "May 2026",
+      date: "30 May 2026",
       blurb: "Two holo-foil fantasy cards for Alex & Rieke's next great adventure: a sorcery that sends them on a honeymoon between worlds, and the legendary couple itself. Given with the words: may your honeymoon be more legendary than any quest."
     },
     "wedding-eva-markus-2025": {
@@ -91,7 +91,7 @@ window.WAS = {
       notes: "The combo piece of the set. Finds the Anwoitin and the Elegdronika and brings them onto the battlefield side by side. Their luck multiplies, and so does their power."
     },
     {
-      id: "052026-01", alias: [], set: "wedding-alex-rieke-2026", listed: true,
+      id: "30052026-01", alias: [], set: "wedding-alex-rieke-2026", listed: true,
       no: "#1", title: "Flitterwochen zwischen Welten", player: "Alex & Rieke",
       variety: "Legendary Sorcery · Holo Foil", grade: 10, gradeLabel: "GEM MINT", pop: 1, popHigher: 0,
       sub: { Centering: 10, Corners: 10, Edges: 10, Adventure: 10 },
@@ -100,7 +100,7 @@ window.WAS = {
       notes: "A honeymoon between worlds: Alex opens the portals, Rieke clears the path with a sword. Every attack exiles the top card of the library and plays it for free. And the PlayStation stays on, because Rieke simply plays along with her husband."
     },
     {
-      id: "052026-02", alias: [], set: "wedding-alex-rieke-2026", listed: true,
+      id: "30052026-02", alias: [], set: "wedding-alex-rieke-2026", listed: true,
       no: "#2", title: "Schicksalsverbundenes Paar", player: "Alex & Rieke",
       variety: "Legendary Creature · Holo Foil", grade: 10, gradeLabel: "GEM MINT", pop: 1, popHigher: 0,
       sub: { Centering: 10, Corners: 10, Edges: 10, Destiny: 10 },
