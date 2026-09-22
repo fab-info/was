@@ -19,6 +19,13 @@ window.WAS = {
       place: "Borgo degli Aranci, Tuscany",
       date: "September 2026",
       blurb: "A two-card set celebrating the rookie season of Kiki & Steffen: a Dolce Vita base card and a Sparkling Night 1/1 refractor. Printed, laminated and slabbed by hand."
+    },
+    "wedding-eva-markus-2025": {
+      name: "2025 Wedding Commander Set",
+      issuer: "Wedding Authentication Services",
+      occasion: "Wedding · Eva & Markus",
+      date: "6 September 2025",
+      blurb: "Four custom fantasy cards for Eva & Markus, written in pure Bavarian: a lawyer who can't be targeted, a solar-powered electrician with first strike, and a sorcery that puts them both into play. Together."
     }
   },
   certs: [
@@ -39,6 +46,42 @@ window.WAS = {
       front: "img/card2_front.jpg", back: "img/card2_back.jpg", finish: "silver",
       facts: [["Show","25.09.2026"],["Theme","This Night is Sparkling"],["Eras attended","All of them"],["Surname","Under review"],["Contract","Lifetime · no trade clause"]],
       notes: "Silver refractor, floodlights on, glitter level at maximum. Swiftie by heart, raver by night. The only copy in existence, just like them."
+    },
+    {
+      id: "06092025-01", alias: [], set: "wedding-eva-markus-2025", listed: true,
+      no: "#1", title: "Zur Hochzeit", player: "Eva & Markus",
+      variety: "Enchantment · Mythic", grade: 10, gradeLabel: "GEM MINT", pop: 1, popHigher: 0,
+      sub: { Centering: 10, Corners: 10, Edges: 10, Magic: 10 },
+      front: "img/em2025_01.jpg", finish: "gold",
+      facts: [["Type","Enchantment"],["Rarity","Mythic"],["Date","06.09.2025"],["Language","German"]],
+      notes: "The opening card of the set. Love as a card game: a little magic, a lot of luck, and two players who know exactly when to go all-in together. Permanent effect, no expiry."
+    },
+    {
+      id: "06092025-02", alias: [], set: "wedding-eva-markus-2025", listed: true,
+      no: "#2", title: "Markus, da Sunnakraft-Moasta", player: "Markus",
+      variety: "Legendary Creature · Elegdronika Hejd", grade: 10, gradeLabel: "GEM MINT", pop: 1, popHigher: 0,
+      sub: { Centering: 10, Corners: 10, Edges: 10, Voltage: 10 },
+      front: "img/em2025_02.jpg", finish: "",
+      facts: [["Type","Legendary Creature"],["Power / Toughness","3 / 2"],["Keywords","Lifelink, First Strike"],["Language","Bavarian"]],
+      notes: "Pulls power straight from the sun and makes sure the electrons always run in the right direction. Enters the battlefield with a bang. Handle with insulated gloves."
+    },
+    {
+      id: "06092025-03", alias: [], set: "wedding-eva-markus-2025", listed: true,
+      no: "#3", title: "Eva, d'Schdanzlmoastarin", player: "Eva",
+      variety: "Legendary Creature · Anwoitin Politikerin", grade: 10, gradeLabel: "GEM MINT", pop: 1, popHigher: 0,
+      sub: { Centering: 10, Corners: 10, Edges: 10, Justice: 10 },
+      front: "img/em2025_03.jpg", finish: "gold",
+      facts: [["Type","Legendary Creature"],["Power / Toughness","4 / 5"],["Keywords","Hexproof"],["Language","Bavarian"]],
+      notes: "Hexproof for a reason: nobody out-argues her. Grants protection to her allies and extra life to whoever she chooses. \"Wer ko, der ko.\""
+    },
+    {
+      id: "06092025-04", alias: [], set: "wedding-eva-markus-2025", listed: true,
+      no: "#4", title: "Fireinond, Miteinond", player: "Eva & Markus",
+      variety: "Sorcery · Mythic", grade: 10, gradeLabel: "GEM MINT", pop: 1, popHigher: 0,
+      sub: { Centering: 10, Corners: 10, Edges: 10, Magic: 10 },
+      front: "img/em2025_04.jpg", finish: "gold",
+      facts: [["Type","Sorcery"],["Rarity","Mythic"],["Effect","Puts the lawyer and the electrician into play, together"],["Language","Bavarian"]],
+      notes: "The combo piece of the set. Finds the Anwoitin and the Elegdronika and brings them onto the battlefield side by side. Their luck multiplies, and so does their power."
     }
   ]
 };

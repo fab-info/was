@@ -180,7 +180,7 @@ function cert(q){
   <div class="wrap" style="margin-top:22px"><div class="panel">
    <div class="status"><i>${check}</i>VERIFIED · CERT ${esc(c.id)}</div>
    <div class="cgrid">
-    <div><div class="flip" id="fl"><div class="in"><div class="face">${holo(c.front,c.finish)}</div><div class="face b">${holo(c.back,'')}</div></div></div><div class="hint">Tap the card to flip it</div></div>
+    <div>${c.back?`<div class="flip" id="fl"><div class="in"><div class="face">${holo(c.front,c.finish)}</div><div class="face b">${holo(c.back,'')}</div></div></div><div class="hint">Tap the card to flip it</div>`:`<div class="flip" style="cursor:default">${holo(c.front,c.finish)}</div>`}</div>
     <div>
      <div class="gradebox"><div class="n">${c.grade}</div><div class="t">${esc(c.gradeLabel)}<small>FINAL GRADE</small></div><div class="pop"><b>${c.pop}</b>POPULATION<br>${c.popHigher} GRADED HIGHER</div></div>
      <table>
@@ -196,7 +196,7 @@ function cert(q){
      ${c.notes?`<h4>GRADER NOTES</h4><p class="note">${esc(c.notes)}</p>`:''}
      ${same.length?`<div class="more">Also in this set: ${same.map(x=>`<a href="?c=${x.id}">${esc(x.no)} ${esc(x.title)}</a>`).join(' · ')}</div>`:''}
     </div></div></div></div>`;
-  document.getElementById('fl').onclick=e=>e.currentTarget.classList.toggle('on');
+  const fl=document.getElementById('fl');if(fl)fl.onclick=e=>e.currentTarget.classList.toggle('on');
   bindSearch();tilt();
 }
 const P=new URLSearchParams(location.search), q=P.get('c');
