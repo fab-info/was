@@ -130,7 +130,10 @@ footer b{color:#fff;font-family:Oswald;letter-spacing:1.5px;font-weight:600}
 const D=window.WAS, B=D.brand, app=document.getElementById('app');
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const find=q=>{if(!q)return null;const t=q.trim().toLowerCase(),d=t.replace(/\D/g,'');
-  return D.certs.find(c=>c.id.toLowerCase()===t||c.id.replace(/\D/g,'')===d||(c.alias||[]).some(a=>a===t||a===d||a===d.slice(-2)))||null};
+  // 1) exakte Cert-Nummer  2) exakter Alias (z. B. "01" aus gedruckten QR-Codes)  3) Kurzeingabe "1" -> "01"
+  return D.certs.find(c=>c.id.toLowerCase()===t||(d.length>2&&c.id.replace(/\D/g,'')===d))
+      ||D.certs.find(c=>(c.alias||[]).some(a=>a===t||a===d))
+      ||(d.length&&d.length<=2?D.certs.find(c=>(c.alias||[]).includes(d.padStart(2,'0'))):null)||null};
 const holo=(src,finish,cls='')=>`<div class="holo ${finish||''} ${cls}"><img src="${src}" alt="" loading="lazy"></div>`;
 const check='<svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 function setBrand(sub){document.getElementById('sealT').textContent=B.short;document.getElementById('brandName').textContent=sub?sub.toUpperCase():B.name.toUpperCase();

@@ -20,6 +20,13 @@ window.WAS = {
       date: "September 2026",
       blurb: "A two-card set celebrating the rookie season of Kiki & Steffen: a Dolce Vita base card and a Sparkling Night 1/1 refractor. Printed, laminated and slabbed by hand."
     },
+    "wedding-alex-rieke-2026": {
+      name: "2026 Honeymoon Quest Set",
+      issuer: "Wedding Authentication Services",
+      occasion: "Wedding · Alex & Rieke",
+      date: "May 2026",
+      blurb: "Two holo-foil fantasy cards for Alex & Rieke's next great adventure: a sorcery that sends them on a honeymoon between worlds, and the legendary couple itself. Given with the words: may your honeymoon be more legendary than any quest."
+    },
     "wedding-eva-markus-2025": {
       name: "2025 Wedding Commander Set",
       issuer: "Wedding Authentication Services",
@@ -82,6 +89,24 @@ window.WAS = {
       front: "img/em2025_04.jpg", finish: "gold",
       facts: [["Type","Sorcery"],["Rarity","Mythic"],["Effect","Puts the lawyer and the electrician into play, together"],["Language","Bavarian"]],
       notes: "The combo piece of the set. Finds the Anwoitin and the Elegdronika and brings them onto the battlefield side by side. Their luck multiplies, and so does their power."
+    },
+    {
+      id: "052026-01", alias: [], set: "wedding-alex-rieke-2026", listed: true,
+      no: "#1", title: "Flitterwochen zwischen Welten", player: "Alex & Rieke",
+      variety: "Legendary Sorcery · Holo Foil", grade: 10, gradeLabel: "GEM MINT", pop: 1, popHigher: 0,
+      sub: { Centering: 10, Corners: 10, Edges: 10, Adventure: 10 },
+      front: "img/ar2026_01.jpg", finish: "gold",
+      facts: [["Type","Legendary Sorcery"],["Mana cost","2 + White + Blue"],["Creates","Alex (3/3 Wizard) & Rieke (3/3 Warrior)"],["Keywords","Haste, Weltenreise"],["Language","German"]],
+      notes: "A honeymoon between worlds: Alex opens the portals, Rieke clears the path with a sword. Every attack exiles the top card of the library and plays it for free. And the PlayStation stays on, because Rieke simply plays along with her husband."
+    },
+    {
+      id: "052026-02", alias: [], set: "wedding-alex-rieke-2026", listed: true,
+      no: "#2", title: "Schicksalsverbundenes Paar", player: "Alex & Rieke",
+      variety: "Legendary Creature · Holo Foil", grade: 10, gradeLabel: "GEM MINT", pop: 1, popHigher: 0,
+      sub: { Centering: 10, Corners: 10, Edges: 10, Destiny: 10 },
+      front: "img/ar2026_02.jpg", finish: "gold",
+      facts: [["Type","Legendary Creature · Alex und Rieke"],["Power / Toughness","6 / 6"],["Keywords","Hexproof, Lifelink, Indestructible"],["Win condition","Double your starting life total"],["Language","German"]],
+      notes: "Bound by fate and practically unbeatable: hexproof, lifelink and indestructible, with an alternate win condition built in. Their only known weakness is the Latin quiz on Friday."
     }
   ]
 };
