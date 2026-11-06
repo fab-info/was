@@ -20,6 +20,13 @@ window.WAS = {
       date: "September 2026",
       blurb: "A two-card set celebrating the rookie season of Kiki & Steffen: a Dolce Vita base card and a Sparkling Night 1/1 refractor. Printed, laminated and slabbed by hand."
     },
+    "oma-helmi-90-2026": {
+      name: "2026 Legenden-Edition · 90",
+      issuer: "Wahre Authentische Schätze",
+      occasion: "90. Geburtstag · Oma Helmi",
+      date: "7. November 2026",
+      blurb: "Zwei Karten zum 90. Geburtstag von Oma Helmi, Jahrgang 1936: die Chefin der Zentrale mit Geburtstagskrone und die Pole-Position-Pilotin von Helmi Racing auf dem Hauslift. Von Hand gedruckt, laminiert und geslabbt. Makellos 10, Unikat."
+    },
     "wedding-alex-rieke-2026": {
       name: "2026 Honeymoon Quest Set",
       issuer: "Wedding Authentication Services",
@@ -107,6 +114,24 @@ window.WAS = {
       front: "img/ar2026_02.jpg", finish: "gold",
       facts: [["Type","Legendary Creature · Alex und Rieke"],["Power / Toughness","6 / 6"],["Keywords","Hexproof, Lifelink, Indestructible"],["Win condition","Double your starting life total"],["Language","German"]],
       notes: "Bound by fate and practically unbeatable: hexproof, lifelink and indestructible, with an alternate win condition built in. Their only known weakness is the Latin quiz on Friday."
+    },
+    {
+      id: "07112026-01", alias: [], set: "oma-helmi-90-2026", listed: true,
+      no: "#1", title: "Die Chefin", player: "Oma Helmi", team: "Die Zentrale",
+      variety: "Legende · Base", grade: 10, gradeLabel: "MAKELLOS", pop: 1, popHigher: 0,
+      sub: { Regiment: 10, Finanzen: 10, Familie: 10, Krone: 10 },
+      front: "img/helmi90_01_front.jpg", back: "img/helmi90_01_back.jpg", finish: "gold",
+      facts: [["Geboren","07.11.1936"],["Position","Chefin · Finanzministerin"],["Kinder · Enkel · Urenkel","6 · 11 · 4 (+1 im Anflug)"],["Schwestern-Rekord","90 · unerreicht"],["Assistent","Opa Günther"]],
+      notes: "Führt das Haus seit jeher mit klarer Linie und steuert die Großfamilie per Tablet aus der Zentrale. Ihr Geburtstagskalender ist aktueller als jedes Einwohnermeldeamt. Krone sitzt, Note glatt 10."
+    },
+    {
+      id: "07112026-02", alias: [], set: "oma-helmi-90-2026", listed: true,
+      no: "#2", title: "Helmi Racing", player: "Oma Helmi", team: "Helmi Racing",
+      variety: "Legende · Refractor 1/1", grade: 10, gradeLabel: "MAKELLOS", pop: 1, popHigher: 0,
+      sub: { Etagen: 10, Rollator: 10, Marzipan: 10, Glitzer: 10 },
+      front: "img/helmi90_02_front.jpg", back: "img/helmi90_02_back.jpg", finish: "silver",
+      facts: [["Hauslift","Keller bis Dachgeschoss"],["Fahrzeug","F1-Rollator · 1 je Etage"],["Strecke","Garten-Cross mit Mulch"],["Treibstoff","Niederegger Marzipan"],["Stern-Rückstand","3–4 Hefte"]],
+      notes: "Erobert per Hauslift alle Etagen und dreht auf der eigenen Cross-Strecke ihre Runden. Lieblingstribüne bleibt aber der Fensterplatz mit Gartenblick. Die einzige Kopie, die es gibt."
     }
   ]
 };
