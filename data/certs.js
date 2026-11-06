@@ -8,7 +8,7 @@ window.WAS = {
   rev: "20261106c",   // nach jedem Bild-Update hochzählen → Browser lädt Bilder neu
   brand: {
     short: "W.A.S.",
-    name: "Wonders Authentication Services",   // allgemein; pro Set überschreibbar
+    name: "Wonders Authentication Services",   // einheitlicher Name der Website; "issuer" im Set = Name auf dem Label (z. B. Wedding … / Wahre Authentische Schätze)
     tagline: "Every card is a one of one.",
     est: "EST. 2026"
   },

@@ -187,7 +187,7 @@ function cert(q){
     <div class="wrap"><div class="panel" style="margin-top:22px"><div class="status bad"><i>!</i>CERT NOT FOUND</div>
     <div style="padding:18px"><p class="note">No card with this number is registered. Check the number on the label, or browse the <a href="./#registry">registry</a>.</p></div></div></div>`;bindSearch();return}
   const s=D.sets[c.set]||{}, same=D.certs.filter(x=>x.set===c.set&&x.id!==c.id);
-  setBrand(s.issuer);document.title='Cert '+c.id+' · '+c.player;
+  setBrand();document.title='Cert '+c.id+' · '+c.player;
   app.innerHTML=`<div class="certtop"><div class="wrap"><h1>CERT VERIFICATION</h1>${searchForm(c.id)}</div></div>
   <div class="wrap" style="margin-top:22px"><div class="panel">
    <div class="status"><i>${check}</i>VERIFIED · CERT ${esc(c.id)}</div>
@@ -202,6 +202,7 @@ function cert(q){
       <tr><td>Player</td><td>${esc(c.player)}</td></tr>
       ${c.team?`<tr><td>Team</td><td>${esc(c.team)}</td></tr>`:''}
       <tr><td>Variety</td><td>${esc(c.variety)}</td></tr>
+      ${s.issuer?`<tr><td>Label edition</td><td>${esc(B.short)} · ${esc(s.issuer)}</td></tr>`:''}
       ${(c.facts||[]).map(([a,b])=>`<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}
      </table>
      ${c.sub?`<h4>SUBGRADES</h4><div class="sub">${Object.entries(c.sub).map(([k,v])=>`<div><b>${v}</b><span>${esc(k)}</span></div>`).join('')}</div>`:''}
