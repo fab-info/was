@@ -96,6 +96,9 @@ h2{font-family:Oswald;font-weight:700;letter-spacing:1.5px;font-size:22px;margin
 .flip .face.b{transform:rotateY(180deg)}
 .flip .holo{transform-style:flat}
 .flip .holo,.flip .holo img{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+/* harte Absicherung: die abgewandte Seite wird zur Hälfte der Drehung unsichtbar geschaltet (kein Aufblitzen, auch nicht in Safari) */
+.flip .face{transition:visibility 0s .115s}  /* = Zeitpunkt der 90°-Stellung bei cubic-bezier(.2,.7,.2,1), .8s */
+.flip.on .face:not(.b),.flip:not(.on) .face.b{visibility:hidden}
 .hint{text-align:center;color:var(--muted);font-size:12px;margin-top:10px}
 .gradebox{display:flex;align-items:center;gap:16px;padding:14px 16px;border-radius:12px;background:var(--ink);color:#fff;margin-bottom:16px}
 .gradebox .n{font-family:Anton;font-size:60px;line-height:1;background:linear-gradient(180deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -149,7 +152,7 @@ function searchForm(val=''){return `<form class="search" id="sf"><input id="q" p
 function bindSearch(){const f=document.getElementById('sf');if(f)f.onsubmit=e=>{e.preventDefault();const v=document.getElementById('q').value;const c=find(v);location.search='?c='+encodeURIComponent(c?c.id:v)}}
 function tilt(){document.querySelectorAll('.holo').forEach(el=>{
   const mv=(x,y)=>{const r=el.getBoundingClientRect(),px=(x-r.left)/r.width,py=(y-r.top)/r.height;
-    el.style.transform=`rotateY(${(px-.5)*14}deg) rotateX(${(.5-py)*14}deg)`;el.style.setProperty('--p',(px*100)+'%');el.classList.add('act')};
+    if(!el.closest('.flip'))el.style.transform=`rotateY(${(px-.5)*14}deg) rotateX(${(.5-py)*14}deg)`;el.style.setProperty('--p',(px*100)+'%');el.classList.add('act')};
   el.addEventListener('pointermove',e=>mv(e.clientX,e.clientY));
   el.addEventListener('pointerleave',()=>{el.style.transform='';el.classList.remove('act')});})}
 function home(){

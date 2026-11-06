@@ -5,7 +5,7 @@
 //  "listed:false" = Karte nur per QR/Cert-Nummer auffindbar, nicht in der Galerie.
 // ============================================================
 window.WAS = {
-  rev: "20261106b",   // nach jedem Bild-Update hochzählen → Browser lädt Bilder neu
+  rev: "20261106c",   // nach jedem Bild-Update hochzählen → Browser lädt Bilder neu
   brand: {
     short: "W.A.S.",
     name: "Wonders Authentication Services",   // allgemein; pro Set überschreibbar
