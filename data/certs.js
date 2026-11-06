@@ -121,7 +121,7 @@ window.WAS = {
       variety: "Legende · Base", grade: 10, gradeLabel: "MAKELLOS", pop: 1, popHigher: 0,
       sub: { Regiment: 10, Finanzen: 10, Familie: 10, Krone: 10 },
       front: "img/helmi90_01_front.jpg", back: "img/helmi90_01_back.jpg", finish: "gold",
-      facts: [["Geboren","07.11.1936"],["Position","Chefin · Finanzministerin"],["Kinder · Enkel · Urenkel","6 · 11 · 4 (+1 im Anflug)"],["Schwestern-Rekord","90 · unerreicht"],["Assistent","Opa Günther"]],
+      facts: [["Geboren","07.11.1936"],["Position","Chefin · Finanzministerin"],["Kinder · Enkel · Urenkel","6 · 11 · 4 (+1 im Anflug)"],["Schwestern-Rekord","90 Jahre · unerreicht"],["Assistent","Opa Günther"]],
       notes: "Führt das Haus seit jeher mit klarer Linie und steuert die Großfamilie per Tablet aus der Zentrale. Ihr Geburtstagskalender ist aktueller als jedes Einwohnermeldeamt. Krone sitzt, Note glatt 10."
     },
     {
