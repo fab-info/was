@@ -99,6 +99,9 @@ h2{font-family:Oswald;font-weight:700;letter-spacing:1.5px;font-size:22px;margin
 /* harte Absicherung: die abgewandte Seite wird zur Hälfte der Drehung unsichtbar geschaltet (kein Aufblitzen, auch nicht in Safari) */
 .flip .face{transition:visibility 0s .115s}  /* = Zeitpunkt der 90°-Stellung bei cubic-bezier(.2,.7,.2,1), .8s */
 .flip.on .face:not(.b),.flip:not(.on) .face.b{visibility:hidden}
+/* während der Drehung: Glanz-Ebene (mix-blend-mode) aus, Drehung auf eigener GPU-Ebene → kein Ruckeln/Aufblitzen in Safari */
+.flip .in{will-change:transform}
+.flip.turning .holo:after{opacity:0!important;transition:none;mix-blend-mode:normal}
 .hint{text-align:center;color:var(--muted);font-size:12px;margin-top:10px}
 .gradebox{display:flex;align-items:center;gap:16px;padding:14px 16px;border-radius:12px;background:var(--ink);color:#fff;margin-bottom:16px}
 .gradebox .n{font-family:Anton;font-size:60px;line-height:1;background:linear-gradient(180deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -209,7 +212,9 @@ function cert(q){
      ${c.notes?`<h4>GRADER NOTES</h4><p class="note">${esc(c.notes)}</p>`:''}
      ${same.length?`<div class="more">Also in this set: ${same.map(x=>`<a href="?c=${x.id}">${esc(x.no)} ${esc(x.title)}</a>`).join(' · ')}</div>`:''}
     </div></div></div></div>`;
-  const fl=document.getElementById('fl');if(fl)fl.onclick=e=>e.currentTarget.classList.toggle('on');
+  const fl=document.getElementById('fl');
+  if(fl){fl.querySelectorAll('img').forEach(i=>{if(i.decode)i.decode().catch(()=>{})}); // beide Seiten vorab dekodieren
+    let t;fl.onclick=()=>{fl.classList.add('turning');fl.classList.toggle('on');clearTimeout(t);t=setTimeout(()=>fl.classList.remove('turning'),850)}}
   bindSearch();tilt();
 }
 const P=new URLSearchParams(location.search), q=P.get('c');
