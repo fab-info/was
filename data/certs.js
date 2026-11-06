@@ -14,6 +14,7 @@ window.WAS = {
   },
   sets: {
     "newlyweds-2026": {
+      when: "2026-09-24",   // ISO-Datum des Anlasses → Sortierung der Galerie (neuestes zuerst)
       name: "2026 Newlyweds Series",
       issuer: "Wedding Authentication Services",
       occasion: "Wedding · Kiki & Steffen",
@@ -22,6 +23,7 @@ window.WAS = {
       blurb: "A two-card set celebrating the rookie season of Kiki & Steffen: a Dolce Vita base card and a Sparkling Night 1/1 refractor. Printed, laminated and slabbed by hand."
     },
     "oma-helmi-90-2026": {
+      when: "2026-11-07",   // ISO-Datum des Anlasses → Sortierung der Galerie (neuestes zuerst)
       name: "2026 Legenden-Edition · 90",
       issuer: "Wahre Authentische Schätze",
       occasion: "90. Geburtstag · Oma Helmi",
@@ -29,6 +31,7 @@ window.WAS = {
       blurb: "Zwei Karten zum 90. Geburtstag von Oma Helmi, Jahrgang 1936: die Chefin der Zentrale mit Geburtstagskrone und die Pole-Position-Pilotin von Helmi Racing auf dem Hauslift. Von Hand gedruckt, laminiert und geslabbt. Makellos 10, Unikat."
     },
     "wedding-alex-rieke-2026": {
+      when: "2026-05-30",   // ISO-Datum des Anlasses → Sortierung der Galerie (neuestes zuerst)
       name: "2026 Honeymoon Quest Set",
       issuer: "Wedding Authentication Services",
       occasion: "Wedding · Alex & Rieke",
@@ -36,6 +39,7 @@ window.WAS = {
       blurb: "Two holo-foil fantasy cards for Alex & Rieke's next great adventure: a sorcery that sends them on a honeymoon between worlds, and the legendary couple itself. Given with the words: may your honeymoon be more legendary than any quest."
     },
     "wedding-eva-markus-2025": {
+      when: "2025-09-06",   // ISO-Datum des Anlasses → Sortierung der Galerie (neuestes zuerst)
       name: "2025 Wedding Commander Set",
       issuer: "Wedding Authentication Services",
       occasion: "Wedding · Eva & Markus",

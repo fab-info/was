@@ -161,7 +161,7 @@ function tilt(){document.querySelectorAll('.holo').forEach(el=>{
 function home(){
   setBrand();document.title=B.short+' Registry';
   const listed=D.certs.filter(c=>c.listed!==false), hero=listed.slice(0,2);
-  const sets=Object.entries(D.sets).map(([k,s])=>({k,s,cards:listed.filter(c=>c.set===k)})).filter(x=>x.cards.length);
+  const sets=Object.entries(D.sets).map(([k,s])=>({k,s,cards:listed.filter(c=>c.set===k)})).filter(x=>x.cards.length).sort((a,b)=>(b.s.when||'').localeCompare(a.s.when||''));
   app.innerHTML=`
   <div class="hero"><div class="wrap">
     <div><div class="kicker">${esc(B.est)} · CUSTOM CARD REGISTRY</div>
